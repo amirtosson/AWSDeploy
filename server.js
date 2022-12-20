@@ -13,5 +13,5 @@ app.get('/aws/test', (req, res) => {
 });
 
 app.listen(PORT, HOST, () => {
-  console.log(`Running on http://${HOST}:${PORT}`);
+  console.log(`Running new on http://${HOST}:${PORT}`);
 });
