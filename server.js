@@ -10,12 +10,16 @@ const s3 = new AWS.S3({
 var params = {
   Bucket: 'daphne-angular'  // Can be your folder name
 };
+const app = express();
+const cors = require('cors');
+app.use(cors({
+    origin: '*'
+}));
 // Constants
 const PORT = 8080;
 const HOST = '0.0.0.0';
 
 // App
-const app = express();
 app.get('/aws/test', (req, res) => {
   s3.listObjects(params, function(err, data) {
     console.log("HERE")
@@ -27,8 +31,8 @@ app.get('/aws/test', (req, res) => {
       res.send(data.Contents)    }
   })
   //res.send('Hello DAPHNE !!');
-});
+})
 
 app.listen(PORT, HOST, () => {
-  console.log(`Running on http://${HOST}:${PORT}`);
+  console.log(`Running new on http://${HOST}:${PORT}`);
 });
