@@ -3,7 +3,7 @@
 const express = require('express');
 const cors = require('cors');
 app.use(cors({
-    origin: 'http://daphne-angular.s3-website.eu-central-1.amazonaws.com/'
+    origin: '*'
 }));
 // Constants
 const PORT = 8080;
