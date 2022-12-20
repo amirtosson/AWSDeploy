@@ -1,6 +1,7 @@
 'use strict';
 
-const express = require('express');
+const express = require('express');,
+const app = express();
 const cors = require('cors');
 app.use(cors({
     origin: '*'
@@ -10,7 +11,7 @@ const PORT = 8080;
 const HOST = '0.0.0.0';
 
 // App
-const app = express();
+
 app.get('/aws/test', (req, res) => {
   res.json('Hello DAPHNE !!');
 });
